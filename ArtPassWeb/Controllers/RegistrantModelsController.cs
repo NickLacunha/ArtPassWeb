@@ -90,7 +90,7 @@ namespace ArtPassWeb.Controllers
         }
 
         // POST: api/RegistrantModels
-        [ResponseType(typeof(RegistrantModel))]
+        [ResponseType(typeof(RegistrantDTO))]
         public async Task<IHttpActionResult> PostRegistrantModel(RegistrantModel registrantModel)
         {
             if (!ModelState.IsValid)
@@ -101,7 +101,15 @@ namespace ArtPassWeb.Controllers
             db.RegistrantModels.Add(registrantModel);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = registrantModel.RegistrantId }, registrantModel);
+            db.Entry(registrantModel).Reference(x => x.Hospital).Load();
+
+            var dto = new RegistrantDTO
+            {
+                RegistrantId = registrantModel.RegistrantId,
+                Name = registrantModel.Name
+            };
+
+            return CreatedAtRoute("DefaultApi", new { id = registrantModel.RegistrantId }, dto);
         }
 
         // DELETE: api/RegistrantModels/5

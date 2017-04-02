@@ -3,6 +3,14 @@
     self.registrants = ko.observableArray();
     self.error = ko.observable();
     self.detail = ko.observable();
+    self.hospitals = ko.observableArray();
+    self.newRegistrant = {
+        Name: ko.observable(),
+        Hospital: ko.observable(),
+        Age: ko.observable(),
+        EmailAddress: ko.observable(),
+
+    }
 
     var registrantsUri = '/api/RegistrantModels/';
 
