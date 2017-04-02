@@ -29,4 +29,21 @@ namespace ArtPassWeb.Models
         [Required]
         public string Comments { get; set; }
     }
+
+    public class RegistrantDTO
+    {
+        public int RegistrantId { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class RegistrantDetailDTO
+    {
+        public int RegistrantId { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string HospitalName { get; set; }
+        public string UnitAndRoomNumber { get; set; }
+        public string EmailAddress { get; set; }
+        public int DaysStaying { get; set; }
+    }
 }

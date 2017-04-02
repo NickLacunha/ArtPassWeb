@@ -16,7 +16,7 @@
             <div class="panel-body">
                 <ul class="list-unstyled" data-bind="foreach: registrants">
                     <li>
-                        <strong><span data-bind="text: Name"></span></strong>: <span data-bind="text: Age"></span>
+                        <strong><span data-bind="text: Name"></span></strong>: 
                         <small><a href="#" data-bind="click: $parent.getBookDetail">Details</a></small>
                     </li>
                 </ul>
@@ -35,6 +35,7 @@
             <table class="table">
                 <tr><td>Name</td><td data-bind="text: detail().Name"></td></tr>
                 <tr><td>Age</td><td data-bind="text: detail().Age"></td></tr>
+                <tr><td>Hospital</td><td data-bind="text: detail().HospitalName"></td></tr>
                 <tr><td>Email Address</td><td data-bind="text: detail().EmailAddress"></td></tr>
                 <tr><td>Days Staying</td><td data-bind="text: detail().DaysStaying"></td></tr>
                 

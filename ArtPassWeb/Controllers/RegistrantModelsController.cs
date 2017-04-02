@@ -18,16 +18,34 @@ namespace ArtPassWeb.Controllers
         private ArtPassWebContext db = new ArtPassWebContext();
 
         // GET: api/RegistrantModels
-        public IQueryable<RegistrantModel> GetRegistrantModels()
+        public IQueryable<RegistrantDTO> GetRegistrantModels()
         {
-            return db.RegistrantModels;
+            var Registrants = from r in db.RegistrantModels
+                              select new RegistrantDTO()
+                              {
+                                  RegistrantId = r.RegistrantId,
+                                  Name = r.Name
+                              };
+
+            return Registrants;
         }
 
         // GET: api/RegistrantModels/5
-        [ResponseType(typeof(RegistrantModel))]
+        [ResponseType(typeof(RegistrantDetailDTO))]
         public async Task<IHttpActionResult> GetRegistrantModel(int id)
         {
-            RegistrantModel registrantModel = await db.RegistrantModels.FindAsync(id);
+            RegistrantDetailDTO registrantModel = await db.RegistrantModels.Include(r => r.Hospital)
+                .Select(r => new RegistrantDetailDTO()
+                {
+                    RegistrantId = r.RegistrantId,
+                    Name = r.Name,
+                    Age = r.Age,
+                    HospitalName = r.Hospital.Name,
+                    EmailAddress = r.EmailAddress,
+                    UnitAndRoomNumber = r.UnitAndRoomNumber,
+                    DaysStaying = r.DaysStaying
+                }).SingleOrDefaultAsync(r => r.RegistrantId == id);
+            
             if (registrantModel == null)
             {
                 return NotFound();
