@@ -13,20 +13,20 @@ namespace ArtPassWeb.Models
     {
         [Key]
         public int RegistrantId { get; set; }
-        [Required]
+        //[Required]
         public string Name { get; set; }
-        [Required]
+        //[Required]
         public int HospitalId { get; set; }
         [ForeignKey("HospitalId")]
         public HospitalModel Hospital { get; set; }
-        [Required]
+        //[Required]
         public int Age { get; set; }
-        [Required]
+        //[Required]
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
         public int DaysStaying { get; set; }
         public string UnitAndRoomNumber { get; set; }
-        [Required]
+        //[Required]
         public string Comments { get; set; }
     }
 
