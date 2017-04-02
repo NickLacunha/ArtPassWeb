@@ -1,0 +1,83 @@
+﻿@model ArtPassWeb.Models.RegistrantModel
+
+@{
+    ViewBag.Title = "Registrant Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registrant Details</h2>
+
+<div>
+    <h4>RegistrantModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospital.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaysStaying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaysStaying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitAndRoomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitAndRoomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RegistrantId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
