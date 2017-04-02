@@ -20,7 +20,7 @@
 
     function getAllRegistrants() {
         ajaxHelper(registrantsUri, 'GET').done(function (data) {
-            self.books(data);
+            self.registrants(data);
         });
     }
 
