@@ -2,6 +2,7 @@
     var self = this;
     self.registrants = ko.observableArray();
     self.error = ko.observable();
+    self.detail = ko.observable();
 
     var registrantsUri = '/api/RegistrantModels/';
 
@@ -21,6 +22,12 @@
     function getAllRegistrants() {
         ajaxHelper(registrantsUri, 'GET').done(function (data) {
             self.registrants(data);
+        });
+    }
+
+    self.getBookDetail = function (item) {
+        ajaxHelper(registrantsUri + item.RegistrantId, 'GET').done(function (data) {
+            self.detail(data);
         });
     }
 
