@@ -1,6 +1,4 @@
-﻿
-
-var RegistrantBaseViewModel = function () {  // currently refactoring to extract the insert logic for the public frontend
+﻿var RegistrantBaseViewModel = function () {  // currently refactoring to extract the insert logic for the public frontend
     var self = this;
     self.error = ko.observable();   // base
     self.detail = ko.observable();  // base I think
@@ -41,12 +39,16 @@ var RegistrantInsertViewModel = function () {
     var self = this;
     RegistrantBaseViewModel.call(self);
 
+    // what happens if we add a bunch of stuff we're not using?
     self.newRegistrant = {    
         Name: ko.observable(),
         Hospital: ko.observable(),
         Age: ko.observable(),
         EmailAddress: ko.observable(),
-        DaysStaying: ko.observable()
+        DaysStaying: ko.observable(),
+        PhoneNumber: ko.observable(),
+        UnitAndRoomNumber: ko.observable(),
+        Comments: ko.observable()
     }
 
     self.addRegistrant = function (formElement) {  
@@ -55,7 +57,10 @@ var RegistrantInsertViewModel = function () {
             HospitalId: self.newRegistrant.Hospital().HospitalId,
             Age: self.newRegistrant.Age(),
             EmailAddress: self.newRegistrant.EmailAddress(),
-            DaysStaying: self.newRegistrant.DaysStaying()
+            DaysStaying: self.newRegistrant.DaysStaying(),
+            PhoneNumber: self.newRegistrant.PhoneNumber(),
+            UnitAndRoomNumber: self.newRegistrant.UnitAndRoomNumber(),
+            Comments: self.newRegistrant.Comments()
         };
 
         ajaxHelper(registrantsUri, 'POST', self.error, registrant).done(function (item) {
