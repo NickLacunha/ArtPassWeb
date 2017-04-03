@@ -26,6 +26,7 @@ namespace ArtPassWeb
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/knockout-{version}.js",
+                "~/Scripts/common.js",
                 "~/Scripts/app.js"));
         }
     }
