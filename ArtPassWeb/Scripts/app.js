@@ -17,20 +17,29 @@ var hospitalsUri = 'api/HospitalModels/';
 
 var RegistrantBaseViewModel = function () {  // currently refactoring to extract the insert logic for the public frontend
     var self = this;
-    self.registrants = ko.observableArray();  // only needed for retrieves
     self.error = ko.observable();   // base
     self.detail = ko.observable();  // base I think
     self.hospitals = ko.observableArray();
     
-    function getAllRegistrants() {      // retrieve only
-        ajaxHelper(registrantsUri, 'GET', self.error).done(function (data) {
-            self.registrants(data);
-        });
-    }
-
     function getHospitals() {   // base
         ajaxHelper(hospitalsUri, 'GET',self.error).done(function (data) {
             self.hospitals(data);
+        });
+    }
+
+    
+    // Fetch the initial data.
+    getHospitals();       // base
+};
+
+var RegistrantRetrieveViewModel = function () {
+    var self = this;
+    RegistrantBaseViewModel.call(self);
+    self.registrants = ko.observableArray();  // only needed for retrieves
+    
+    function getAllRegistrants() {      // retrieve only
+        ajaxHelper(registrantsUri, 'GET', self.error).done(function (data) {
+            self.registrants(data);
         });
     }
 
@@ -40,9 +49,7 @@ var RegistrantBaseViewModel = function () {  // currently refactoring to extract
         });
     }
 
-    // Fetch the initial data.
     getAllRegistrants();  // only needed for retrieves
-    getHospitals();       // base
 };
 
 var RegistrantInsertViewModel = function () {
@@ -74,4 +81,11 @@ var RegistrantInsertViewModel = function () {
     }
 };
 
-ko.applyBindings(new RegistrantInsertViewModel());
+var RegistrantAdminViewModel = function () {
+    var self = this;
+    RegistrantBaseViewModel.call(self);
+    RegistrantRetrieveViewModel.call(self);
+    RegistrantInsertViewModel.call(self);
+};
+
+ko.applyBindings(new RegistrantAdminViewModel());
