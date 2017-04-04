@@ -300,7 +300,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\RegistrantDetails.cshtml" />
     <Content Include="Views\Manage\Overview.cshtml" />
-    <Content Include="Views\Manage\AddRegistrant.cshtml" />
+    <Content Include="Views\Manage\Add.cshtml" />
     <Content Include="Views\Manage\RegistrantDetails.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>

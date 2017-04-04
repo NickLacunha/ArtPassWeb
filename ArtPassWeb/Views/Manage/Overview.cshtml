@@ -2,16 +2,13 @@
     @Scripts.Render("~/bundles/app")
 }
 
-<div class="page-header">
-    <h1>ArtPassAdmin</h1>
-</div>
 
 <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title">Registrants</h2>
+                <h2 class="panel-title">Program Participants</h2>
             </div>
             <div class="panel-body">
                 <ul class="list-unstyled" data-bind="foreach: registrants">
@@ -25,8 +22,11 @@
         <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
     </div>
 
-    @RenderPage("RegistrantDetails.cshtml")
 
     @*@RenderPage("AddRegistrant.cshtml")*@
 
+</div>
+
+<div class="row">
+    @RenderPage("RegistrantDetails.cshtml")
 </div>

@@ -1,52 +1,56 @@
-﻿<div class="col-md-4">
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="col-md-12"> <!-- probably want to consider moving the outer div out of the template...-->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title">Add Registrant</h2>
+            <h2 class="panel-title">Add Participant</h2>
         </div>
 
         <div class="panel-body">
             <form class="form-horizontal" data-bind="submit: addRegistrant">
                 <div class="form-group">
-                    <label for="inputHospital" class="col-sm-2 control-label">Hospital</label>
-                    <div class="col-sm-10">
+                    <label for="inputHospital" class="col-md-2 control-label">Hospital</label>
+                    <div class="col-md-10">
                         <select data-bind="options:hospitals, optionsText: 'Name', value: newRegistrant.Hospital"></select>
                     </div>
                 </div>
 
                 <div class="form-group" data-bind="with: newRegistrant">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-                    <div class="col-sm-10">
+                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="inputName" data-bind="value:Name" />
                     </div>
 
-                    <label for="inputAge" class="col-sm-2 control-label">Age</label>
-                    <div class="col-sm-10">
+                    <label for="inputAge" class="col-md-2 control-label">Age</label>
+                    <div class="col-md-10">
                         <input type="number" class="form-control" id="inputAge" data-bind="value:Age" />
                     </div>
 
-                    <label for="inputEmailAddress" class="col-sm-2 control-label">Email Address</label>
-                    <div class="col-sm-10">
+                    <label for="inputEmailAddress" class="col-md-2 control-label">Email Address</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="inputEmailAddress" data-bind="value:EmailAddress" />
                     </div>
                     
-                    <label for="inputPhoneNumber" class="col-sm-2 control-label">Phone Number</label>
-                    <div class="col-sm-10">
+                    <label for="inputPhoneNumber" class="col-md-2 control-label">Phone Number</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="inputPhoneNumber" data-bind="value:PhoneNumber" />
                     </div>
 
-                    <label for="inputUnit" class="col-sm-2 control-label">Unit and Room Number</label>
-                    <div class="col-sm-10">
+                    <label for="inputUnit" class="col-md-2 control-label">Unit and Room</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="inputUnit" data-bind="value:UnitAndRoomNumber" />
                     </div>
-
-                    <label for="inputComments" class="col-sm-2 control-label">Comments</label>
-                    <div class="col-sm-10">
+                    <br />
+                    <label for="inputComments" class="col-md-2 control-label">Comments</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="inputComments" data-bind="value:Comments" />
                     </div>
 
-                    <label for="inputDaysStaying" class="col-sm-2 control-label">Days Staying</label>
-                    <div class="col-sm-10">
-                        <input type="number" step="any" class="form-control" id="inputDaysStaying" data-bind="value:DaysStaying" />
+                    <label for="inputDaysStaying" class="col-md-2 control-label">Days Staying</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="inputDaysStaying" data-bind="value:DaysStaying" />
                     </div>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
