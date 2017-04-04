@@ -1,0 +1,52 @@
+﻿<div>
+    <div>
+        <div>
+            <form data-bind="submit: addRegistrant">
+                <div>
+                    <label for="inputHospital">Hospital</label>
+                    <div>
+                        <select data-bind="options:hospitals, optionsText: 'Name', value: newRegistrant.Hospital"></select>
+                    </div>
+                </div>
+
+                <div data-bind="with: newRegistrant">
+                    <label for="inputName">Name</label>
+                    <div>
+                        <input  type="text" id="inputName" data-bind="value:Name" />
+                    </div>
+
+                    <label for="inputAge">Age</label>
+                    <div>
+                        <input  type="number" id="inputAge" data-bind="value:Age" />
+                    </div>
+
+                    <label for="inputEmailAddress" class>Email Address</label>
+                    <div>
+                        <input  type="text" id="inputEmailAddress" data-bind="value:EmailAddress" />
+                    </div>
+                    
+                    <label for="inputPhoneNumber" >Phone Number</label>
+                    <div>
+                        <input  type="text" id="inputPhoneNumber" data-bind="value:PhoneNumber" />
+                    </div>
+
+                    <label for="inputUnit" >Unit and Room Number</label>
+                    <div>
+                        <input  type="text" id="inputUnit" data-bind="value:UnitAndRoomNumber" />
+                    </div>
+
+                    <label for="inputComments" >Comments</label>
+                    <div>
+                        <input  type="text" id="inputComments" data-bind="value:Comments" />
+                    </div>
+
+                    <label for="inputDaysStaying" >Days Staying</label>
+                    <div>
+                        <input  type="number" step="any" id="inputDaysStaying" data-bind="value:DaysStaying" />
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
