@@ -38,6 +38,7 @@ var RegistrantRetrieveViewModel = function () {
 var RegistrantInsertViewModel = function () {
     var self = this;
     RegistrantBaseViewModel.call(self);
+    self.sebumitted = false;
 
     // what happens if we add a bunch of stuff we're not using?
     self.newRegistrant = {    
@@ -68,6 +69,8 @@ var RegistrantInsertViewModel = function () {
                 self.registrants.push(item);
             }
         });
+
+        formElement.reset();
     }
 };
 
