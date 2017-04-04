@@ -13,4 +13,4 @@
 
 // todo: define this conditionally
 var registrantsUri = '/api/RegistrantModels/';
-var hospitalsUri = 'api/HospitalModels/';
+var hospitalsUri = '/api/HospitalModels/';

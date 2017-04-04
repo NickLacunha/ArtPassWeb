@@ -11,7 +11,7 @@ namespace ArtPassWeb.Controllers
         // GET: Manage
         public ActionResult Index()
         {
-            return Overview();
+            return RedirectToAction("Overview");//Overview();
         }
 
         public ActionResult Overview()

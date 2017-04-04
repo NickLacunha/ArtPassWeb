@@ -299,13 +299,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\RegistrantDetails.cshtml" />
-    <Content Include="Views\Home\TotalAdmin.cshtml" />
-    <Content Include="Views\Home\AddRegistrant.cshtml" />
-    <Content Include="Views\Home\RegistrantDetails.cshtml" />
+    <Content Include="Views\Manage\Overview.cshtml" />
+    <Content Include="Views\Manage\AddRegistrant.cshtml" />
+    <Content Include="Views\Manage\RegistrantDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Manage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
